@@ -50,7 +50,7 @@ export class HeroesComponent implements OnInit {
       });
   }
 
-  <!-- Listen to event emitted from HeroFormComponent -->
+  // Listen to event emitted from HeroFormComponent
   onNewHeroAdded(hero: Hero): void {
     this.heroes.push(hero);
     this.selectedHero = null;
