@@ -1,14 +1,24 @@
 <div class="container">
   <h2>Hero form</h2>
-  <form>
+  <form (ngSubmit)="add()" #heroForm="ngForm">
+
+    <!-- Name -->
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" class="form-control" [(ngModel)]="model.name" required>
+      <input type="text" id="name" name="name" #name="ngModel" class="form-control"
+             [(ngModel)]="model.name" required>
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        Name is required
+      </div>
     </div>
+
+    <!-- Alter ego -->
     <div class="form-group">
       <label for="alterEgo">Alter Ego</label>
       <input type="text" id="alterEgo" name="alterEgo" class="form-control" [(ngModel)]="model.alterEgo">
     </div>
+
+    <!-- Power -->
     <div class="form-group">
       <label for="power">Hero Power</label>
       <select id="power" name="power" required [(ngModel)]="model.power">
@@ -17,6 +27,8 @@
         </option>
       </select>
     </div>
-    <button type="submit" (click)="newHero()">Submit</button>
+
+    <!-- Submit -->
+    <button type="submit" [disabled]="!heroForm.valid">Submit</button>
   </form>
 </div>

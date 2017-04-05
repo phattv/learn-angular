@@ -6,3 +6,22 @@
 .form-group .form-control {
   padding: 5px;
 }
+
+.ng-valid[required], .ng-valid.required {
+  border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442;
+}
+
+.alert {
+  background-color: #f2dede;
+  margin-top: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.alert-danger {
+  color: #b45b59;
+}

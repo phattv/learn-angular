@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Hero } from './hero';
+import { Hero }             from './hero';
+import { HeroService }      from './hero.service';
 
 @Component({
   selector: 'hero-form',
@@ -13,20 +14,19 @@ export class HeroFormComponent {
   model = new Hero();
   submitted = false;
 
-  onSubmit(): void {
-    this.submitted = true;
+  constructor(private heroService: HeroService) {
   }
 
-  newHero(): void {
-    name = name.trim();
-    if (!name) {
+  add(): void {
+    if (!this.model) {
       return;
     }
     this.heroService
-      .create(name)
+      .create(this.model)
       .then(hero => {
-        this.heroes.push(hero);
-        this.selectedHero = null;
+        // TODO: tell HeroesComponent to reload list or add new hero
+        // this.heroes.push(hero);
+        // this.selectedHero = null;
       });
   }
 }
