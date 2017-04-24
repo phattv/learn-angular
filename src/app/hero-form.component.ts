@@ -11,7 +11,7 @@ import { HeroService }      from './hero.service';
 
 export class HeroFormComponent {
   powers = ['Really smart', 'Super flexible', 'Super hot', 'Weather changer'];
-  model = new Hero();
+  model = new Hero(21, '', '', '');
   @Output() newHeroAdded = new EventEmitter<Hero>();
 
   constructor(private heroService: HeroService) {

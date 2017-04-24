@@ -24,8 +24,8 @@ import { HeroFormComponent }    from './hero-form.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     HttpModule,
+    AppRoutingModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   declarations: [
